@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { handleInitialData } from '../actions/shared';
 import './App.css';
 import LoadingBar from 'react-redux-loading';
+import QuestionsHome from './QuestionsHome';
 
 class App extends Component {
   componentDidMount() {
@@ -13,38 +14,24 @@ class App extends Component {
     return (
       <Fragment>
         {/* <LoadingBar /> */}
-        {this.props.questions === null
-          ? null
-          : (
+        <div className="container">
+          {this.props.loading === true
+            ? null
+            :
             <div>
-              <ul>
-                {this.props.questionIDs.map((questionID) => {
-                  var question = this.props.questions[questionID]
-                  return (
-                    <li>
-                      <p>{question.author}</p>
-                      <p>{question.timestamp}</p>
-                      <p>{question.optionOne.text}</p>
-                      <p>{question.optionTwo.text}</p>
-                    </li>
-                  )
-                })}
-              </ul>
-
+              <QuestionsHome />
             </div>
-          )
-        }
-        <div>{this.state}</div>
+          }
+          <div>{this.state}</div>
+        </div>
       </Fragment >
     )
   }
 }
 
-function mapStateToProps({ users, questions }) {
+function mapStateToProps({ users, questions, authedUser }) {
   return {
-    questions: questions,
-    questionIDs: Object.keys(questions)
-      .sort((a, b) => questions[b].timestamp - questions[a].timestamp)
+    loading: authedUser === null,
   }
 }
 
