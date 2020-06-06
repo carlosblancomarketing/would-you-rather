@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 class QuestionItem extends Component {
     render() {
-        const { author, question } = this.props;
+        const { author, question, voted } = this.props;
         return (
             <div className="card p-3">
                 <div className="row">
@@ -21,7 +21,7 @@ class QuestionItem extends Component {
                             <li>{question.optionTwo.text}</li>
                         </ul>
                         <Link to={`question/${question.id}`} className="waves-effect waves-light btn text-white">
-                            View
+                            {voted === true ? 'View Results' : 'Submit Vote'}
                         </Link>
                     </div>
                 </div>
@@ -30,10 +30,11 @@ class QuestionItem extends Component {
     }
 }
 
-function mapStateToProps({ users, questions }, { questionId }) {
+function mapStateToProps({ authedUser, users, questions }, { questionId }) {
     return {
         author: users[questions[questionId].author],
         question: questions[questionId],
+        voted: Object.keys(users[authedUser].answers).includes(questionId)
     }
 }
 
