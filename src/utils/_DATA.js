@@ -109,7 +109,7 @@ let questions = {
       text: 'write JavaScript',
     },
     optionTwo: {
-      votes: ['tylermcginnis'],
+      votes: ['tylermcginnis', 'sarahedo'],
       text: 'write Swift'
     }
   },

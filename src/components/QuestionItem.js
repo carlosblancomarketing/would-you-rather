@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-class QuestionsItem extends Component {
+class QuestionItem extends Component {
     render() {
-        const { user, question } = this.props;
+        const { author, question } = this.props;
         return (
             <div className="card p-3">
                 <div className="row">
                     <div className="col s12">
-                        <p>{user.name} asks</p>
+                        <p>{author.name} asks</p>
                     </div>
                     <div className="col s4">
-                        <img src={user.avatarURL} className="responsive-img" />
+                        <img src={author.avatarURL} className="responsive-img" />
                     </div>
                     <div className="col s8">
                         <p>Would you rather</p>
@@ -28,9 +28,9 @@ class QuestionsItem extends Component {
 
 function mapStateToProps({ users, questions }, { questionId }) {
     return {
-        user: users[questions[questionId].author],
+        author: users[questions[questionId].author],
         question: questions[questionId],
     }
 }
 
-export default connect(mapStateToProps)(QuestionsItem);
+export default connect(mapStateToProps)(QuestionItem);

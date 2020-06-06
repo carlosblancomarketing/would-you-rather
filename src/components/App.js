@@ -4,6 +4,7 @@ import { handleInitialData } from '../actions/shared';
 import './App.css';
 import LoadingBar from 'react-redux-loading';
 import QuestionsHome from './QuestionsHome';
+import QuestionPage from './QuestionPage';
 
 class App extends Component {
   componentDidMount() {
@@ -17,10 +18,7 @@ class App extends Component {
         <div className="container">
           {this.props.loading === true
             ? null
-            :
-            <div>
-              <QuestionsHome />
-            </div>
+            : <QuestionPage match={{params: {id: "8xf0y6ziyjabvozdd253nd"}}}/>
           }
           <div>{this.state}</div>
         </div>
