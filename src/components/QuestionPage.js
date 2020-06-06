@@ -21,6 +21,7 @@ class QuestionPage extends Component {
 
 function mapStateToProps({ authedUser, users, questions }, props) {
     const { id } = props.match.params;
+    console.log(id)
     const voted = Object.keys(users[authedUser].answers).includes(id)
 
     return {

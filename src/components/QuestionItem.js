@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 class QuestionItem extends Component {
     render() {
@@ -19,6 +20,9 @@ class QuestionItem extends Component {
                             <li>{question.optionOne.text}</li>
                             <li>{question.optionTwo.text}</li>
                         </ul>
+                        <Link to={`question/${question.id}`} className="waves-effect waves-light btn text-white">
+                            View
+                        </Link>
                     </div>
                 </div>
             </div>
