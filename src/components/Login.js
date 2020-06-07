@@ -38,16 +38,16 @@ class Login extends Component {
         const { authedUser, users, userIDs } = this.props;
         const { selectedUser } = this.state;
         return (
-            <div class="row">
+            <div className="row">
                 <div className="col s12 m8 offset-m2 mt-5">
                     <h1>Login</h1>
                     <div className="input-field col s12">
                         <form onSubmit={this.handleSubmit}>
                             <select onChange={this.handleChange}>
-                                <option value="" disabled selected>Choose your user</option>
+                                <option value="" disabled>Choose your user</option>
                                 {userIDs.map((id) => (
                                     <option
-                                        value={id}
+                                        value={id} key={id}
                                     >{id}</option>
                                 ))}
                             </select>
