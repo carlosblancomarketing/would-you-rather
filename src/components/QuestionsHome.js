@@ -17,15 +17,15 @@ class QuestionsHome extends Component {
 
         return (
 
-            <div class="row">
+            <div className="row">
                 <div className="col s12 m8 offset-m2 mt-5">
-                    <div class="row">
-                        <div class="col s12">
-                            <ul class="tabs">
-                                <li class="tab col s6">
-                                    <a class="active" href="#unanswered_questions">Unanswered Questions</a>
+                    <div className="row">
+                        <div className="col s12">
+                            <ul className="tabs">
+                                <li className="tab col s6">
+                                    <a className="active" href="#unanswered_questions">Unanswered Questions</a>
                                 </li>
-                                <li class="tab col s6">
+                                <li className="tab col s6">
                                     <a href="#answered_questions">Answered Questions</a>
                                 </li>
                             </ul>
