@@ -14,10 +14,18 @@ class LeaderboardItem extends Component {
         return (
             <div className="card p-3">
                 <p>Position: {position} </p>
-                <p>User: {user.id}</p>
-                <p>Points: {points}</p>
-                <p>Questions created: {questionsCreated} </p>
-                <p>Questions Answered: {questionsAnswered}</p>
+                <div className="row">
+                    <div className="col s4">
+                        <img src={user.avatarURL} className="responsive-img"/>
+                    </div>
+                    <div className="col s8">
+                        <p>User: {user.id}</p>
+                        <p>Points: {points}</p>
+                        <p>Questions created: {questionsCreated} </p>
+                        <p>Questions Answered: {questionsAnswered}</p>
+                    </div>
+                </div>
+
             </div>
         )
     }
