@@ -32,8 +32,8 @@ class QuestionResult extends Component {
                             <div className={optionOneSelected ? 'option selected' : 'option'}>
                                 <p>
                                     {optionOneSelected
-                                        ? <i class="material-icons mr-2">check_circle</i>
-                                        : <i class="material-icons mr-2">panorama_fish_eye</i>
+                                        ? <i className="material-icons mr-2">check_circle</i>
+                                        : <i className="material-icons mr-2">panorama_fish_eye</i>
                                     }
 
                                     {question.optionOne.text}
@@ -47,8 +47,8 @@ class QuestionResult extends Component {
                             <div className={optionTwoSelected ? 'option selected' : 'option'}>
                                 <p>
                                     {optionTwoSelected
-                                        ? <i class="material-icons mr-2">check_circle</i>
-                                        : <i class="material-icons mr-2">panorama_fish_eye</i>
+                                        ? <i className="material-icons mr-2">check_circle</i>
+                                        : <i className="material-icons mr-2">panorama_fish_eye</i>
                                     }
                                     {question.optionTwo.text}
                                 </p>

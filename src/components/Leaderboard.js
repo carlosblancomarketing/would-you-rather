@@ -7,7 +7,7 @@ class Leaderboard extends Component {
         const { sortedUserIds } = this.props;
 
         return (
-            <div class="row">
+            <div className="row">
                 <div className="col s12 m8 offset-m2 mt-5">
                     {sortedUserIds.map((id, index) => (
                         <LeaderboardItem id={id} key={id} position={index + 1} />

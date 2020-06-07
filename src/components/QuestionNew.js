@@ -37,7 +37,7 @@ class QuestionNew extends Component {
 
     render() {
         return (
-            <div class="row">
+            <div className="row">
                 <div className="col s12 m8 offset-m2 mt-5">
                     <h1>Create a new Question</h1>
                     <p>Would you rather</p>
