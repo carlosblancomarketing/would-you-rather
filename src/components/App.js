@@ -9,6 +9,9 @@ import QuestionNew from './QuestionNew';
 import Leaderboard from './Leaderboard';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Nav from './Nav';
+import Login from './Login';
+import 'materialize-css/dist/css/materialize.min.css';
+
 
 class App extends Component {
   componentDidMount() {
@@ -21,15 +24,23 @@ class App extends Component {
         <Fragment>
           {/* <LoadingBar /> */}
           <div className="container">
-            <Nav />
             {this.props.loading === true
               ? null
-              : <div>
-                <Route path='/' exact component={QuestionsHome} />
-                <Route path='/question/:id' component={QuestionPage} />
-                <Route path='/new' component={QuestionNew} />
-                <Route path='/leaderboard' component={Leaderboard} />
-              </div>
+              : this.props.authedUser === null
+                ? <div>
+                  <Nav />
+                  <Route path='/' component={Login} />
+                </div>
+                : <div>
+                  <Nav />
+                  <Route path='/' exact component={QuestionsHome} />
+                  <Route path='/question/:id' component={QuestionPage} />
+                  <Route path='/new' component={QuestionNew} />
+                  <Route path='/leaderboard' component={Leaderboard} />
+                  <Route path='/login' component={Login} />
+
+                </div>
+
             }
             <div>{this.state}</div>
           </div>
@@ -40,8 +51,10 @@ class App extends Component {
 }
 
 function mapStateToProps({ users, questions, authedUser }) {
+  console.log('authedUser: ', authedUser)
   return {
-    loading: authedUser === null,
+    loading: Object.entries(users).length === 0,
+    authedUser
   }
 }
 
