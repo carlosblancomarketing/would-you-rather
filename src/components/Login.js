@@ -43,7 +43,7 @@ class Login extends Component {
                     <h1>Login</h1>
                     <div className="input-field col s12">
                         <form onSubmit={this.handleSubmit}>
-                            <select onChange={this.handleChange}>
+                            <select onChange={this.handleChange} value="">
                                 <option value="" disabled>Choose your user</option>
                                 {userIDs.map((id) => (
                                     <option
