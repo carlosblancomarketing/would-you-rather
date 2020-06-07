@@ -10,7 +10,7 @@ class Nav extends Component {
                 <div className="nav-wrapper">
                     <NavLink to='/' exact activeClassName='active' className="brand-logo">
                         WYR
-                        </NavLink>
+                    </NavLink>
 
                     <ul id="nav-mobile" className="right hide-on-med-and-down">
                         <li>
@@ -22,31 +22,37 @@ class Nav extends Component {
                         <li>
                             <NavLink to='/new' activeClassName='active'>
                                 New Question
-                        </NavLink>
+                            </NavLink>
                         </li>
 
                         <li>
                             <NavLink to='/leaderboard' activeClassName='active'>
                                 Leaderboard
-                        </NavLink>
+                            </NavLink>
                         </li>
 
                         {this.props.authedUser === null
-                            ? null
-                            : <li>
+                            ? <li>
+                                <NavLink to='/login' activeClassName='active'>
+                                    Login
+                                </NavLink>
+                            </li>
+                            : <span><li>
                                 <img src={this.props.user.avatarURL} width="20px" className="responsive-img" />
                                 {this.props.user.id}
                             </li>
+
+                                <li>
+                                    <NavLink to='/logout' activeClassName='active'>
+                                        Logout
+                                    </NavLink>
+                                </li>
+                            </span>
                         }
 
-                        <li>
-                            <NavLink to='/login' activeClassName='active'>
-                                Login
-                        </NavLink>
-                        </li>
                     </ul>
                 </div>
-                <hr/>
+                <hr />
             </nav>
 
         )

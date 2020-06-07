@@ -10,6 +10,7 @@ import Leaderboard from './Leaderboard';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Nav from './Nav';
 import Login from './Login';
+import Logout from './Logout';
 import 'materialize-css/dist/css/materialize.min.css';
 
 
@@ -38,7 +39,7 @@ class App extends Component {
                   <Route path='/new' component={QuestionNew} />
                   <Route path='/leaderboard' component={Leaderboard} />
                   <Route path='/login' component={Login} />
-
+                  <Route path='/logout' component={Logout} />
                 </div>
 
             }
