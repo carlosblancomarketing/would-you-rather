@@ -7,10 +7,11 @@ import QuestionsHome from './QuestionsHome';
 import QuestionPage from './QuestionPage';
 import QuestionNew from './QuestionNew';
 import Leaderboard from './Leaderboard';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Nav from './Nav';
 import Login from './Login';
 import Logout from './Logout';
+import NotFound from './NotFound';
 import 'materialize-css/dist/css/materialize.min.css';
 
 
@@ -34,12 +35,15 @@ class App extends Component {
                 </div>
                 : <div>
                   <Nav />
-                  <Route path='/' exact component={QuestionsHome} />
-                  <Route path='/question/:id' component={QuestionPage} />
-                  <Route path='/add' component={QuestionNew} />
-                  <Route path='/leaderboard' component={Leaderboard} />
-                  <Route path='/login' component={Login} />
-                  <Route path='/logout' component={Logout} />
+                  <Switch>
+                    <Route path='/' exact component={QuestionsHome} />
+                    <Route path='/question/:id' component={QuestionPage} />
+                    <Route path='/add' component={QuestionNew} />
+                    <Route path='/leaderboard' component={Leaderboard} />
+                    <Route path='/login' component={Login} />
+                    <Route path='/logout' component={Logout} />
+                    <Route component={NotFound}/>
+                  </Switch>
                 </div>
 
             }
