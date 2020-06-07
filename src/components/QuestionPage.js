@@ -7,13 +7,13 @@ class QuestionPage extends Component {
     render() {
         const { id, voted } = this.props;
         return (
-            <div>
-                {voted === true
-                    ? <QuestionResult id={id} />
-                    : <QuestionVote id={id} />
-                }
-
-
+            <div className="row">
+                <div className="col s12 m8 offset-m2 mt-5">
+                    {voted === true
+                        ? <QuestionResult id={id} />
+                        : <QuestionVote id={id} />
+                    }
+                </div>
             </div>
         )
     }

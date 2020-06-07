@@ -38,25 +38,27 @@ class Login extends Component {
         const { authedUser, users, userIDs } = this.props;
         const { selectedUser } = this.state;
         return (
-            <div>
-                <h1>Login</h1>
-                <div className="input-field col s12">
-                    <form onSubmit={this.handleSubmit}>
-                        <select onChange={this.handleChange}>
-                            <option value="" disabled selected>Choose your user</option>
-                            {userIDs.map((id) => (
-                                <option
-                                    value={id}
-                                >{id}</option>
-                            ))}
-                        </select>
-                        <button
-                            type="submit"
-                            disabled={selectedUser === ""}
-                            className="waves-effect waves-light btn text-white">
-                            Login
+            <div class="row">
+                <div className="col s12 m8 offset-m2 mt-5">
+                    <h1>Login</h1>
+                    <div className="input-field col s12">
+                        <form onSubmit={this.handleSubmit}>
+                            <select onChange={this.handleChange}>
+                                <option value="" disabled selected>Choose your user</option>
+                                {userIDs.map((id) => (
+                                    <option
+                                        value={id}
+                                    >{id}</option>
+                                ))}
+                            </select>
+                            <button
+                                type="submit"
+                                disabled={selectedUser === ""}
+                                className="waves-effect waves-light btn text-white">
+                                Login
                         </button>
-                    </form>
+                        </form>
+                    </div>
                 </div>
             </div>
         )

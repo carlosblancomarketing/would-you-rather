@@ -7,10 +7,12 @@ class Leaderboard extends Component {
         const { sortedUserIds } = this.props;
 
         return (
-            <div>
-                {sortedUserIds.map((id, index) => (
-                    <LeaderboardItem id={id} key={id} position={index+1}/>
-                ))}
+            <div class="row">
+                <div className="col s12 m8 offset-m2 mt-5">
+                    {sortedUserIds.map((id, index) => (
+                        <LeaderboardItem id={id} key={id} position={index + 1} />
+                    ))}
+                </div>
             </div>
         )
     }
@@ -21,7 +23,7 @@ function mapStateToProps({ users }) {
         .sort((a, b) => {
             const aPoints = (Object.keys(users[a].answers)).length + users[a].questions.length
             const bPoints = (Object.keys(users[b].answers)).length + users[b].questions.length
-            return bPoints - aPoints 
+            return bPoints - aPoints
         })
 
     return {

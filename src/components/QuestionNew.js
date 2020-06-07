@@ -37,30 +37,32 @@ class QuestionNew extends Component {
 
     render() {
         return (
-            <div>
-                <h1>Create a new Question</h1>
-                <p>Would you rather</p>
-                <form onSubmit={this.handleSubmit}>
-                    <input
-                        type="text"
-                        placeholder="First option"
-                        value={this.state.optionOneText}
-                        name="optionOneText"
-                        onChange={this.handleChange}
-                    />
+            <div class="row">
+                <div className="col s12 m8 offset-m2 mt-5">
+                    <h1>Create a new Question</h1>
+                    <p>Would you rather</p>
+                    <form onSubmit={this.handleSubmit}>
+                        <input
+                            type="text"
+                            placeholder="First option"
+                            value={this.state.optionOneText}
+                            name="optionOneText"
+                            onChange={this.handleChange}
+                        />
 
-                    <input
-                        type="text"
-                        placeholder="Second option"
-                        value={this.state.optionTwoText}
-                        name="optionTwoText"
-                        onChange={this.handleChange}
-                    />
+                        <input
+                            type="text"
+                            placeholder="Second option"
+                            value={this.state.optionTwoText}
+                            name="optionTwoText"
+                            onChange={this.handleChange}
+                        />
 
-                    <button type="submit" className="waves-effect waves-light btn text-white">
-                        Create Question
+                        <button type="submit" className="waves-effect waves-light btn text-white">
+                            Create Question
                     </button>
-                </form>
+                    </form>
+                </div>
             </div>
         )
     }
