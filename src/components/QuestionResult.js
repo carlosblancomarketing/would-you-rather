@@ -10,7 +10,9 @@ class QuestionResult extends Component {
             optionTwoTotal,
             totalAnswers,
             optionOnePercentage,
-            optionTwoPercentage } = this.props;
+            optionTwoPercentage,
+            optionOneSelected,
+            optionTwoSelected } = this.props;
         return (
             <div>
                 <div className="card p-3">
@@ -25,17 +27,38 @@ class QuestionResult extends Component {
                             <p>Would you rather</p>
                             <p>Asked By {question.author}</p>
 
-                            <p>{question.optionOne.text}</p>
-                            <p>{optionOneTotal} out of {totalAnswers} votes ({optionOnePercentage}%)</p>
-                            <div className="progress">
-                                <div className="determinate" style={{width: `${optionOnePercentage}%`}}></div>
+
+
+                            <div className={optionOneSelected ? 'option selected' : 'option'}>
+                                <p>
+                                    {optionOneSelected
+                                        ? <i class="material-icons mr-2">check_circle</i>
+                                        : <i class="material-icons mr-2">panorama_fish_eye</i>
+                                    }
+
+                                    {question.optionOne.text}
+                                </p>
+                                <p>{optionOneTotal} out of {totalAnswers} votes ({optionOnePercentage}%)</p>
+                                <div className="progress">
+                                    <div className="determinate" style={{ width: `${optionOnePercentage}%` }}></div>
+                                </div>
                             </div>
 
-                            <p>{question.optionTwo.text}</p>
-                            <p>{optionTwoTotal} out of {totalAnswers} votes ({optionTwoPercentage}%)</p>
-                            <div className="progress">
-                                <div className="determinate" style={{width: `${optionTwoPercentage}%`}}></div>
+                            <div className={optionTwoSelected ? 'option selected' : 'option'}>
+                                <p>
+                                    {optionTwoSelected
+                                        ? <i class="material-icons mr-2">check_circle</i>
+                                        : <i class="material-icons mr-2">panorama_fish_eye</i>
+                                    }
+                                    {question.optionTwo.text}
+                                </p>
+                                <p>{optionTwoTotal} out of {totalAnswers} votes ({optionTwoPercentage}%)</p>
+                                <div className="progress">
+                                    <div className="determinate" style={{ width: `${optionTwoPercentage}%` }}></div>
+                                </div>
                             </div>
+
+
 
                         </div>
                     </div>
@@ -57,8 +80,8 @@ function mapStateToProps({ authedUser, users, questions }, props) {
     const totalAnswers = optionOneTotal + optionTwoTotal
     const optionOnePercentage = (optionOneTotal * 100 / totalAnswers).toFixed(2)
     const optionTwoPercentage = (optionTwoTotal * 100 / totalAnswers).toFixed(2)
-
-
+    const optionOneSelected = question.optionOne.votes.includes(authedUser)
+    const optionTwoSelected = question.optionTwo.votes.includes(authedUser)
 
 
     return {
@@ -68,7 +91,9 @@ function mapStateToProps({ authedUser, users, questions }, props) {
         optionTwoTotal,
         totalAnswers,
         optionOnePercentage,
-        optionTwoPercentage
+        optionTwoPercentage,
+        optionOneSelected,
+        optionTwoSelected
     }
 }
 

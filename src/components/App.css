@@ -5,3 +5,13 @@
 nav {
     box-shadow: none!important;
 }
+
+.option {
+    padding:0.5rem;
+}
+.option.selected {
+    background-color: #bbdefb;
+}
+
+
+
