@@ -11,12 +11,12 @@ export const ADD_QUESTION_ANSWER = 'ADD_QUESTION_ANSWER';
 
 export function handleInitialData() {
     return (dispatch) => {
-        // dispatch(showLoading());
+        dispatch(showLoading());
         return getInitialData()
             .then(({ users, questions }) => {
                 dispatch(receiveUsers(users));
                 dispatch(receiveQuestions(questions));
-                // dispatch(hideLoading());
+                dispatch(hideLoading());
             })
     }
 }

@@ -58,7 +58,11 @@ class QuestionNew extends Component {
                             onChange={this.handleChange}
                         />
 
-                        <button type="submit" className="waves-effect waves-light btn text-white">
+                        <button
+                        type="submit"
+                        className="waves-effect waves-light btn text-white"
+                        disabled={this.state.optionOneText === this.state.optionTwoText}
+                        >
                             Create Question
                     </button>
                     </form>

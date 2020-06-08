@@ -2,15 +2,15 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import QuestionResult from './QuestionResult';
 import QuestionVote from './QuestionVote';
-import { Redirect } from 'react-router-dom';
+import NotFound from './NotFound';
 
 class QuestionPage extends Component {
     render() {
-        const { id, voted, validQuestion } = this.props;
-
-        if (!validQuestion) {
-            return <Redirect to='/404' />
+        if (this.props.isWrongID) {
+            return <NotFound/>
         }
+
+        const { id, voted } = this.props;
 
         return (
             <div className="row">
@@ -27,14 +27,16 @@ class QuestionPage extends Component {
 
 function mapStateToProps({ authedUser, users, questions }, props) {
     const { id } = props.match.params;
-    const validQuestion = questions.hasOwnProperty(id)
+    var isWrongID = false;
+
+    if (questions[id] === undefined) isWrongID = true;
 
     const voted = Object.keys(users[authedUser].answers).includes(id)
 
     return {
         id,
         voted,
-        validQuestion
+        isWrongID
     }
 }
 
