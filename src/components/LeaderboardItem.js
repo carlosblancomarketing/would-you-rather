@@ -16,7 +16,7 @@ class LeaderboardItem extends Component {
                 <p>Position: {position} </p>
                 <div className="row">
                     <div className="col s4">
-                        <img src={user.avatarURL} className="responsive-img"/>
+                        <img src={user.avatarURL} className="responsive-img" alt={user.id + ' avatar'}/>
                     </div>
                     <div className="col s8">
                         <p>User: {user.id}</p>

@@ -31,11 +31,11 @@ class Login extends Component {
 
         dispatch(setAuthedUser(selectedUser));
 
-        this.props.history.push('/');
+        // this.props.history.push('/');
     }
 
     render() {
-        const { authedUser, users, userIDs } = this.props;
+        const { userIDs } = this.props;
         const { selectedUser } = this.state;
         return (
             <div className="row">

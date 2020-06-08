@@ -38,7 +38,12 @@ class Nav extends Component {
                                 </NavLink>
                             </li>
                             : <span><li>
-                                <img src={this.props.user.avatarURL} width="20px" className="responsive-img" />
+                                <img 
+                                src={this.props.user.avatarURL}
+                                width="20px"
+                                className="responsive-img"
+                                alt={this.props.user.id + " avatar"}
+                                />
                                 {this.props.user.id}
                             </li>
 

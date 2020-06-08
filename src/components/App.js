@@ -64,5 +64,3 @@ function mapStateToProps({ users, questions, authedUser }) {
 }
 
 export default connect(mapStateToProps)(App);
-
-{/* <QuestionPage match={{ params: { id: "8xf0y6ziyjabvozdd253nd" } }} /> */ }

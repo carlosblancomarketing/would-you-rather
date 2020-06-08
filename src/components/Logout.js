@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import M from "materialize-css";
 import { setAuthedUser } from '../actions/authedUser';
 import { Redirect } from 'react-router-dom';
 

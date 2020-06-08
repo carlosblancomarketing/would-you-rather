@@ -37,7 +37,7 @@ class QuestionVote extends Component {
             <div className="card p-3">
                 <div className="row">
                     <div className="col s4">
-                        <img src={author.avatarURL} className="responsive-img" />
+                        <img src={author.avatarURL} className="responsive-img" alt={author.id + " avatar"} />
                     </div>
                     <div className="col s8">
                         <p>{author.name} asks</p>
@@ -65,7 +65,11 @@ class QuestionVote extends Component {
                                     <span>{question.optionTwo.text}</span>
                                 </label>
                             </p>
-                            <button type="submit" className="waves-effect waves-light btn text-white">button</button>
+                            <button
+                                type="submit"
+                                className="waves-effect waves-light btn text-white"
+                                disabled={this.state.selectedOption === ""}
+                                >button</button>
 
                         </form>
 

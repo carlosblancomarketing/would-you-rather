@@ -12,7 +12,7 @@ class QuestionItem extends Component {
                         <p>{author.name} asks</p>
                     </div>
                     <div className="col s4">
-                        <img src={author.avatarURL} className="responsive-img" />
+                        <img src={author.avatarURL} className="responsive-img" alt={author.id + ' avatar'}/>
                     </div>
                     <div className="col s8">
                         <p>Would you rather</p>

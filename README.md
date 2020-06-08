@@ -1,3 +1,18 @@
+Would you rather app.
+
+This is a quiz app where players can log in and vote on different polls.
+
+This app was developed as a project for the Udacity React Nanodegree React & Redux class. It uses data from a local API and refreshing the page will cause the app data to restore the initial state. API calls are made asynchronously.
+
+Features:
+
+- Login an existing user
+- Add a new Poll
+- Vote on existing polls
+- Leaderboard with top users
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
